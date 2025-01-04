@@ -1,0 +1,29 @@
+services:
+  app:
+    depends_on:
+      - db
+    image: checker-app:latest
+    container_name: "checker-app"
+    environment:
+      SPRING_PROFILES_ACTIVE: deals
+      APP_NAME: "checker-app"
+    volumes:
+      - D:\WORK\logs:/etc/logs
+    networks:
+      - app-network
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: "spring-user"
+      POSTGRES_PASSWORD: "apppw"
+    ports:
+      - "16432:5432"
+    container_name: "checker-db"
+    volumes:
+      - D:\WORK\checker-pg-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+networks:
+  app-network:
+    name: app-network
+    external: true
