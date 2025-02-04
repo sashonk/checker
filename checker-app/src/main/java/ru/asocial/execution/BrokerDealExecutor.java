@@ -27,6 +27,8 @@ public class BrokerDealExecutor {
 
     @PostConstruct
     public void init() {
+        investorRepository.deleteAll();
+
         InvestorEntity inv1 = new InvestorEntity();
         inv1.setActive(true);
         inv1.setCode("invN1");
