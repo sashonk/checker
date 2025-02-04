@@ -34,7 +34,7 @@
         <dependency>
             <groupId>ru.asocial</groupId>
             <artifactId>checker-api</artifactId>
-            <version>${project.version}</version>
+            <version>0.0.2</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
